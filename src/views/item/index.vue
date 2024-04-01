@@ -12,7 +12,7 @@
                   placeholder="请填写物品名称"
                   style="width: 14%"
                   clearable
-                  @clear="getItemList"
+                  @clear="reset"
                   @keyup.enter.native="initFun"/>
 
         <label style="margin-right: 10px; margin-left: 20px">失物招领状态：</label>
@@ -46,38 +46,10 @@
             style="width: 25%; margin-left: 10px"
             @clear="init(orderStatus)"
         />
-        <!--        <label style="margin-right: 10px; margin-left: 20px">状态：</label>-->
-        <!--        <el-select v-model="dishStatus"-->
-        <!--                   style="width: 14%"-->
-        <!--                   placeholder="请选择"-->
-        <!--                   clearable-->
-        <!--                   @clear="getItemList">-->
-        <!--          <el-option v-for="item in saleStatus"-->
-        <!--                     :key="item.value"-->
-        <!--                     :label="item.label"-->
-        <!--                     :value="item.value"/>-->
-        <!--        </el-select>-->
         <el-button class="normal-btn continue"
                    @click="getItemList()">
           查询
         </el-button>
-
-        <!--        <div class="tableLab">-->
-        <!--          <span class="delBut non"-->
-        <!--                @click="deleteHandle('批量', null)">批量删除</span>-->
-        <!-- <span class="blueBug non" @click="statusHandle('1')">批量启售</span>
-        <span
-          style="border: none"
-          class="delBut non"
-          @click="statusHandle('0')"
-          >批量停售</span
-        > -->
-        <!--          <el-button type="primary"-->
-        <!--                     style="margin-left: 15px"-->
-        <!--                     @click="addDishtype('add')">-->
-        <!--            + 新建菜品-->
-        <!--          </el-button>-->
-        <!--        </div>-->
       </div>
 
 
@@ -87,7 +59,6 @@
       这种视觉提示可帮助用户跟踪当前正在查看的行，并增强整体用户体验。-->
       <el-table :data="tableData" stripe:true row-key="id">
         <el-table-column prop="id" label="序号" width="80" align="center" sortable/>
-
         <!--它控制当单元格内容溢出其容器时是否显示工具提示。当单元格内容过大而无法在列宽内容纳时，就会出现一个工具提示，允许用户将鼠标悬停在单元格上查看完整内容。-->
         <!--一般prop和v-slot不一起使用-->
         <el-table-column label="失物招领图片" show-overflow-tooltip>
@@ -100,8 +71,8 @@
             <!--            </div>-->
           </template>
         </el-table-column>
-
         <el-table-column prop="name" label="失物招领名称"/>
+<!--        TODO:这里改成点击column就显示，而不是一个按钮-->
         <el-table-column prop="content" label="具体描述信息">
           <template v-slot="scope">
             <el-button type="primary" size="mini" @click="viewEditor(scope.row.content)">点击查看</el-button>

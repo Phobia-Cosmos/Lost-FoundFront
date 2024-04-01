@@ -34,7 +34,7 @@ const routes = [
                 path: 'home',
                 name: 'Home',
                 meta: {name: '系统首页'},
-                component: () => import('../views/manager/Home')
+                component: () => import('../views/home/index.vue')
             },
             {
                 path: 'employee',
@@ -42,12 +42,6 @@ const routes = [
                 meta: {name: '管理员信息'},
                 component: () => import('../views/employee')
             },
-            // {
-            //     path: 'adminPerson',
-            //     name: 'AdminPerson',
-            //     meta: {name: '个人信息'},
-            //     component: () => import('../views/manager/AdminPerson')
-            // },
             {
                 path: 'item',
                 name: 'item',

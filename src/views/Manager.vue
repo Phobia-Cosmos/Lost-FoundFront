@@ -115,7 +115,7 @@
 </template>
 
 <script>
-import {editAdminPassword, updateAdmin, uploadAdminPicture} from "@/apis/admin";
+import {editAdminPassword, updateAdmin} from "@/apis/admin";
 
 export default {
   name: "Manager",

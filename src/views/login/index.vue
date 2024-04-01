@@ -63,7 +63,7 @@ export default {
     return {
       form: {
         // TODO:这个不需要
-        username: 'lzh',
+        username: 'admin_lzhss',
         password: 'lzh'
       },
       rules: {

@@ -118,6 +118,7 @@ export default {
         validatorId: null
       },
       total: 0,
+
       currentNodeId: null, // 存储当前点击的id
       currentNodeStatus: null,
       showDialog: false, // 控制弹层的显示和隐藏
